@@ -1,0 +1,78 @@
+Setup
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --list
+
+
+=========================
+
+Starting a Repo
+git init                             # Create a new local repo
+git clone URL                        # Clone remote repo
+
+Push an existing Repository from the the command line (Basicaly ata kono new folder khule git hub  a notun repo khuule kora lage {git init # Create a new local repo
+ }
+
+** git remote add origin URL(HTTP)
+=======================================================================
+Basic Workflow
+git status                       # See changes
+git add file.txt                 # Stage file
+git add .                        # Stage all changes
+git commit -m "msg"              # Commit staged changes
+git push origin main             # Push to remote
+git pull                         # Get latest changes
+git fetch                        # Fetch without merging
+
+Branching
+git branch                     		  	# List branches
+git branch new-branch            		# Create branch
+git checkout new-branch          		# Switch branch
+git checkout -b new-branch       		# Create & switch
+git --set-upstream origin new_branch_name       # Upstream the branch for push commit file change in new branch
+git merge branch-name            		# Merge branch
+git branch -d branch-name        		# Delete branch
+
+
+
+
+
+
+==================================================
+Conflict Scenerio:  
+git checkout main
+git pull origin main
+git merge feature-branch
+
+# Resolve conflicts if any
+
+<<<<<<< HEAD
+console.log("Version A");
+=======
+console.log("Version B");
+>>>>>>> feature-branch
+
+
+Solve Conflict:
+console.log("Version A");    
+console.log("Version B");
+
+After solve :  
+git add .
+git commit
+git push origin main
+
+Git Fetch: 
+git fetch downloads changes from the remote repository but does not update your local branch automatically.
+It’s safer than git pull because you can review changes before merging.
+
+git fetch origin
+#To see differences:
+git log origin/main
+#To merge fetched changes manually:
+git merge origin/main
+===================================
+History
+git log # Full commit history
+git log --oneline # One-line history
+git log --graph --oneline --decorate
